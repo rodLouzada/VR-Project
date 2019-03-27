@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 2986610408435298189}
   - component: {fileID: 2986610408435298188}
   - component: {fileID: 2986610408435298163}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 2986610409377672580}
   - component: {fileID: 2986610409377672581}
   - component: {fileID: 2986610409377672582}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: colider
   m_TagString: btn
   m_Icon: {fileID: 0}
