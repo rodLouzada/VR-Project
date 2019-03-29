@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 2986610408676874742}
   m_Layer: 0
   m_Name: task_btn
-  m_TagString: Untagged
+  m_TagString: btn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

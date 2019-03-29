@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - btn
+  - solid
+  - slim
+  - glass
+  - cube
+  - hanoi
+  - tower
+  - easy
+  - medium
+  - hard
+  - low
+  - high
   layers:
   - Default
   - TransparentFX

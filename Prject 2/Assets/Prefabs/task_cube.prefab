@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2012089272268458492}
   m_Layer: 0
   m_Name: task_cube
-  m_TagString: Untagged
+  m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

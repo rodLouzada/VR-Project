@@ -8,7 +8,12 @@ public class pressed : MonoBehaviour
     public int timer;
     public Text txtTimer;
     public bool psd;
-    
+
+    public void setTime(int t)
+    {
+        timer = t;
+        txtTimer.text = "Timer: " + timer;
+    }
     void Start()
     {
         psd = false;
