@@ -4566,8 +4566,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1825867308}
   m_HandleRect: {fileID: 1825867307}
   m_Direction: 2
-  m_Value: 0.9999999
-  m_Size: 0.47942382
+  m_Value: 0.99999976
+  m_Size: 0.4794238
   m_NumberOfSteps: 5
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18496,9 +18496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c050f16055ae6489a5c123112dac1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p_solid: {fileID: 3246278674892090677, guid: 5ab4c0fa1f09e43459a3be3e192813bb, type: 3}
-  p_slab: {fileID: 2154525699946794613, guid: f948cdfae861fb34f952b0a746ab1097, type: 3}
-  p_transparent: {fileID: 4312420126898599582, guid: bf0d9c60aac6da548bc84135e4c50029,
+  p_solid: {fileID: 7205191005157938889, guid: 23c46a0905d9705448b4f04ee40b06dd, type: 3}
+  p_slab: {fileID: 2653518918181490699, guid: 9bf70bfe0acefdb4892e9d546974f07f, type: 3}
+  p_transparent: {fileID: 8658619951966057959, guid: 5a8e55ec1cc0ed846a927d34fe99685f,
     type: 3}
   t_hanoi: {fileID: 4249231335073521017, guid: dd95f7379e890a54488af6c24e5686d5, type: 3}
   t_btn: {fileID: 2986610408676874741, guid: 438c00edd7a8c9c4683f459b5a0ceb5b, type: 3}
