@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.prject2.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Lucas\\Documents\\GitHub\\VR-Project\\Prject 2\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Prject 2 [Testing]"
+        }
+      }
+    }
+  ]
+}
