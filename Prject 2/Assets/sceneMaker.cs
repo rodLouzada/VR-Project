@@ -8,10 +8,12 @@ using System.Xml.Serialization;
 using System.IO;
 public class sceneMaker : MonoBehaviour
 {
+	public List<Transform> listP = new List<Transform>();
+	
     public Transform p_solid;
     public Transform p_slab;
     public Transform p_transparent;
-
+    
     public Transform t_hanoi;
     public GameObject t_btn;
     GameObject auxt_btn;
@@ -129,7 +131,7 @@ public class sceneMaker : MonoBehaviour
         /*
         auxv3 = new Vector3(pos10m.transform.position.x - 2.2f, pos10m.transform.position.y + 1f, pos10m.transform.position.z);
         auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-        Instantiate(p_solid, new Vector3(pos10m.transform.position.x - 2.0f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
+        Instantiate(p_solid, new Vector3(pos10m.transform.position.x - 2.3f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
         auxt_btn = Instantiate(t_btn, auxv3, auxq);
         auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(2); */
         
@@ -145,6 +147,7 @@ public class sceneMaker : MonoBehaviour
         itemDB.nausea = "Nausea assessed: " + tn.tag.ToString();
     }
 
+Transform plat;
         public void setScene()
 
   {
@@ -167,24 +170,27 @@ public class sceneMaker : MonoBehaviour
                     sec2 = int.Parse(if2.text);
                     auxv3 = new Vector3(pos2m.transform.position.x - 1.8f, pos2m.transform.position.y + 1.0f, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y + 90.0f, pos2m.transform.rotation.z);
-                    Instantiate(p_solid, pos2m.transform.position, pos2m.transform.rotation);
+                    plat = Instantiate(p_solid, pos2m.transform.position, pos2m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec2);
                     entry2.timer = sec2.ToString();
+					listP.Add(plat);
                 }
                 if (t2_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos2m.transform.position.x - 1.74f, pos2m.transform.position.y, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y, pos2m.transform.rotation.z);
-                    Instantiate(p_solid, pos2m.transform.position, pos2m.transform.rotation);
+                    plat =Instantiate(p_solid, pos2m.transform.position, pos2m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t2_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos2m.transform.position.x - 1.74f, pos2m.transform.position.y + 1.8f, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y + 90.0f, pos2m.transform.rotation.z);
-                    Instantiate(p_solid, pos2m.transform.position, pos2m.transform.rotation);
+                    plat =Instantiate(p_solid, pos2m.transform.position, pos2m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t2_plat.tag == "slim")
@@ -194,24 +200,27 @@ public class sceneMaker : MonoBehaviour
                     sec2 = int.Parse(if2.text);
                     auxv3 = new Vector3(pos2m.transform.position.x - 2.2f, pos2m.transform.position.y + 1f, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y + 90.0f, pos2m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos2m.transform.position.x - 2.0f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
+                    plat =Instantiate(p_slab, new Vector3(pos2m.transform.position.x - 2.3f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec2);
                     entry2.timer = sec2.ToString();
+					listP.Add(plat);
                 }
                 if (t2_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos2m.transform.position.x - 2.2f, pos2m.transform.position.y + 1.8f, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y + 90.0f, pos2m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos2m.transform.position.x - 2.0f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
+                    plat =Instantiate(p_slab, new Vector3(pos2m.transform.position.x - 2.3f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t2_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos2m.transform.position.x - 2.2f, pos2m.transform.position.y + 1.8f, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y + 90.0f, pos2m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos2m.transform.position.x - 2.0f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
+                    plat =Instantiate(p_slab, new Vector3(pos2m.transform.position.x - 2.3f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t2_plat.tag == "glass")
@@ -221,25 +230,28 @@ public class sceneMaker : MonoBehaviour
                     sec2 = int.Parse(if2.text);
                     auxv3 = new Vector3(pos2m.transform.position.x - 2.2f, pos2m.transform.position.y + 1f, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y + 90.0f, pos2m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos2m.transform.position.x - 2.0f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
+                    plat =Instantiate(p_transparent, new Vector3(pos2m.transform.position.x - 2.3f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec2);
                     entry2.timer = sec2.ToString();
+					listP.Add(plat);
                 }
                 if (t2_task.tag == "cube")
                 {
 
                     auxv3 = new Vector3(pos2m.transform.position.x - 2.2f, pos2m.transform.position.y + 1.8f, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y + 90.0f, pos2m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos2m.transform.position.x - 2.0f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
+                    plat =Instantiate(p_transparent, new Vector3(pos2m.transform.position.x - 2.3f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t2_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos2m.transform.position.x - 2.2f, pos2m.transform.position.y + 1.8f, pos2m.transform.position.z);
                     auxq = Quaternion.Euler(pos2m.transform.rotation.x, pos2m.transform.localEulerAngles.y + 90.0f, pos2m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos2m.transform.position.x - 2.0f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
+                    plat =Instantiate(p_transparent, new Vector3(pos2m.transform.position.x - 2.3f, pos2m.transform.position.y, pos2m.transform.position.z), pos2m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             itemDB.list.Add(entry2);
@@ -261,24 +273,27 @@ public class sceneMaker : MonoBehaviour
                     sec5 = int.Parse(if5.text);
                     auxv3 = new Vector3(pos5m.transform.position.x - 1.8f, pos5m.transform.position.y + 1.0f, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y + 90.0f, pos5m.transform.rotation.z);
-                    Instantiate(p_solid, pos5m.transform.position, pos5m.transform.rotation);
+                    plat =Instantiate(p_solid, pos5m.transform.position, pos5m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec5);
                     entry5.timer = sec5.ToString();
+					listP.Add(plat);
                 }
                 if (t5_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos5m.transform.position.x - 1.74f, pos5m.transform.position.y, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y, pos5m.transform.rotation.z);
-                    Instantiate(p_solid, pos5m.transform.position, pos5m.transform.rotation);
+                    plat =Instantiate(p_solid, pos5m.transform.position, pos5m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t5_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos5m.transform.position.x - 1.74f, pos5m.transform.position.y + 1.8f, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y + 90.0f, pos5m.transform.rotation.z);
-                    Instantiate(p_solid, pos5m.transform.position, pos5m.transform.rotation);
+                    plat =Instantiate(p_solid, pos5m.transform.position, pos5m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t5_plat.tag == "slim")
@@ -288,24 +303,27 @@ public class sceneMaker : MonoBehaviour
                     sec5 = int.Parse(if5.text);
                     auxv3 = new Vector3(pos5m.transform.position.x - 2.2f, pos5m.transform.position.y + 1f, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y + 90.0f, pos5m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos5m.transform.position.x - 2.0f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
+                    plat =Instantiate(p_slab, new Vector3(pos5m.transform.position.x - 2.3f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec5);
                     entry5.timer = sec5.ToString();
+					listP.Add(plat);
                 }
                 if (t5_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos5m.transform.position.x - 2.2f, pos5m.transform.position.y + 1.8f, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y + 90.0f, pos5m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos5m.transform.position.x - 2.0f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
+                    plat =Instantiate(p_slab, new Vector3(pos5m.transform.position.x - 2.3f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t5_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos5m.transform.position.x - 2.2f, pos5m.transform.position.y + 1.8f, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y + 90.0f, pos5m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos5m.transform.position.x - 2.0f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
+                    plat =Instantiate(p_slab, new Vector3(pos5m.transform.position.x - 2.3f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t5_plat.tag == "glass")
@@ -315,24 +333,27 @@ public class sceneMaker : MonoBehaviour
                     sec5 = int.Parse(if5.text);
                     auxv3 = new Vector3(pos5m.transform.position.x - 2.2f, pos5m.transform.position.y + 1f, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y + 90.0f, pos5m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos5m.transform.position.x - 2.0f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
+                    plat =Instantiate(p_transparent, new Vector3(pos5m.transform.position.x - 2.3f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec5);
                     entry5.timer = sec5.ToString();
+					listP.Add(plat);
                 }
                 if (t5_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos5m.transform.position.x - 2.2f, pos5m.transform.position.y + 1.8f, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y + 90.0f, pos5m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos5m.transform.position.x - 2.0f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
+                    plat =Instantiate(p_transparent, new Vector3(pos5m.transform.position.x - 2.3f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t5_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos5m.transform.position.x - 2.2f, pos5m.transform.position.y + 1.8f, pos5m.transform.position.z);
                     auxq = Quaternion.Euler(pos5m.transform.rotation.x, pos5m.transform.localEulerAngles.y + 90.0f, pos5m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos5m.transform.position.x - 2.0f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
+                    plat =Instantiate(p_transparent, new Vector3(pos5m.transform.position.x - 2.3f, pos5m.transform.position.y, pos5m.transform.position.z), pos5m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             itemDB.list.Add(entry5);
@@ -354,24 +375,27 @@ public class sceneMaker : MonoBehaviour
                     sec10 = int.Parse(if10.text);
                     auxv3 = new Vector3(pos10m.transform.position.x - 1.8f, pos10m.transform.position.y + 1.0f, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-                    Instantiate(p_solid, pos10m.transform.position, pos10m.transform.rotation);
+                    plat =Instantiate(p_solid, pos10m.transform.position, pos10m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec10);
                     entry10.timer = sec10.ToString();
+					listP.Add(plat);
                 }
                 if (t10_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos10m.transform.position.x - 1.74f, pos10m.transform.position.y, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y, pos10m.transform.rotation.z);
-                    Instantiate(p_solid, pos10m.transform.position, pos10m.transform.rotation);
+                   plat = Instantiate(p_solid, pos10m.transform.position, pos10m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t10_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos10m.transform.position.x - 1.74f, pos10m.transform.position.y + 1.8f, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-                    Instantiate(p_solid, pos10m.transform.position, pos10m.transform.rotation);
+                   plat = Instantiate(p_solid, pos10m.transform.position, pos10m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t10_plat.tag == "slim")
@@ -381,24 +405,27 @@ public class sceneMaker : MonoBehaviour
                     sec10 = int.Parse(if10.text);
                     auxv3 = new Vector3(pos10m.transform.position.x - 2.2f, pos10m.transform.position.y + 1f, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos10m.transform.position.x - 2.0f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
+                    plat =Instantiate(p_slab, new Vector3(pos10m.transform.position.x - 2.3f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec10);
                     entry10.timer = sec10.ToString();
+					listP.Add(plat);
                 }
                 if (t10_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos10m.transform.position.x - 2.2f, pos10m.transform.position.y + 1.8f, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos10m.transform.position.x - 2.0f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
+                   plat = Instantiate(p_slab, new Vector3(pos10m.transform.position.x - 2.3f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t10_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos10m.transform.position.x - 2.2f, pos10m.transform.position.y + 1.8f, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos10m.transform.position.x - 2.0f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
+                   plat = Instantiate(p_slab, new Vector3(pos10m.transform.position.x - 2.3f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t10_plat.tag == "glass")
@@ -408,24 +435,27 @@ public class sceneMaker : MonoBehaviour
                     sec10 = int.Parse(if10.text);
                     auxv3 = new Vector3(pos10m.transform.position.x - 2.2f, pos10m.transform.position.y + 1f, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos10m.transform.position.x - 2.0f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
+                   plat = Instantiate(p_transparent, new Vector3(pos10m.transform.position.x - 2.3f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec10);
                     entry10.timer = sec10.ToString();
+					listP.Add(plat);
                 }
                 if (t10_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos10m.transform.position.x - 2.2f, pos10m.transform.position.y + 1.8f, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos10m.transform.position.x - 2.0f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
+                   plat = Instantiate(p_transparent, new Vector3(pos10m.transform.position.x - 2.3f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if(t10_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos10m.transform.position.x - 2.2f, pos10m.transform.position.y + 1.8f, pos10m.transform.position.z);
                     auxq = Quaternion.Euler(pos10m.transform.rotation.x, pos10m.transform.localEulerAngles.y + 90.0f, pos10m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos10m.transform.position.x - 2.0f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
+                  plat =  Instantiate(p_transparent, new Vector3(pos10m.transform.position.x - 2.3f, pos10m.transform.position.y, pos10m.transform.position.z), pos10m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             itemDB.list.Add(entry10);
@@ -447,24 +477,27 @@ public class sceneMaker : MonoBehaviour
                     sec20 = int.Parse(if20.text);
                     auxv3 = new Vector3(pos20m.transform.position.x - 1.8f, pos20m.transform.position.y + 1.0f, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y + 90.0f, pos20m.transform.rotation.z);
-                    Instantiate(p_solid, pos20m.transform.position, pos20m.transform.rotation);
+                  plat =  Instantiate(p_solid, pos20m.transform.position, pos20m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec20);
                     entry20.timer = sec20.ToString();
+					listP.Add(plat);
                 }
                 if (t20_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos20m.transform.position.x - 1.74f, pos20m.transform.position.y, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y, pos20m.transform.rotation.z);
-                    Instantiate(p_solid, pos20m.transform.position, pos20m.transform.rotation);
+                  plat =  Instantiate(p_solid, pos20m.transform.position, pos20m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t20_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos20m.transform.position.x - 1.74f, pos20m.transform.position.y + 1.8f, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y + 90.0f, pos20m.transform.rotation.z);
-                    Instantiate(p_solid, pos20m.transform.position, pos20m.transform.rotation);
+                 plat =   Instantiate(p_solid, pos20m.transform.position, pos20m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t20_plat.tag == "slim")
@@ -474,24 +507,27 @@ public class sceneMaker : MonoBehaviour
                     sec20 = int.Parse(if20.text);
                     auxv3 = new Vector3(pos20m.transform.position.x - 2.2f, pos20m.transform.position.y + 1f, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y + 90.0f, pos20m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos20m.transform.position.x - 2.0f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
+                 plat =   Instantiate(p_slab, new Vector3(pos20m.transform.position.x - 2.3f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec20);
                     entry20.timer = sec20.ToString();
+					listP.Add(plat);
                 }
                 if (t20_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos20m.transform.position.x - 2.2f, pos20m.transform.position.y + 1.8f, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y + 90.0f, pos20m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos20m.transform.position.x - 2.0f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
+                  plat =  Instantiate(p_slab, new Vector3(pos20m.transform.position.x - 2.3f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t20_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos20m.transform.position.x - 2.2f, pos20m.transform.position.y + 1.8f, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y + 90.0f, pos20m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos20m.transform.position.x - 2.0f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
+                  plat =  Instantiate(p_slab, new Vector3(pos20m.transform.position.x - 2.3f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t20_plat.tag == "glass")
@@ -501,24 +537,27 @@ public class sceneMaker : MonoBehaviour
                     sec20 = int.Parse(if20.text);
                     auxv3 = new Vector3(pos20m.transform.position.x - 2.2f, pos20m.transform.position.y + 1f, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y + 90.0f, pos20m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos20m.transform.position.x - 2.0f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
+                  plat =  Instantiate(p_transparent, new Vector3(pos20m.transform.position.x - 2.3f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec20);
                     entry20.timer = sec20.ToString();
+					listP.Add(plat);
                 }
                 if (t20_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos20m.transform.position.x - 2.2f, pos20m.transform.position.y + 1.8f, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y + 90.0f, pos20m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos20m.transform.position.x - 2.0f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
+                  plat =  Instantiate(p_transparent, new Vector3(pos20m.transform.position.x - 2.3f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t20_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos20m.transform.position.x - 2.2f, pos20m.transform.position.y + 1.8f, pos20m.transform.position.z);
                     auxq = Quaternion.Euler(pos20m.transform.rotation.x, pos20m.transform.localEulerAngles.y + 90.0f, pos20m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos20m.transform.position.x - 2.0f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
+                  plat =  Instantiate(p_transparent, new Vector3(pos20m.transform.position.x - 2.3f, pos20m.transform.position.y, pos20m.transform.position.z), pos20m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             itemDB.list.Add(entry20);
@@ -540,24 +579,27 @@ public class sceneMaker : MonoBehaviour
                     sec30 = int.Parse(if30.text);
                     auxv3 = new Vector3(pos30m.transform.position.x - 1.8f, pos30m.transform.position.y + 1.0f, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y + 90.0f, pos30m.transform.rotation.z);
-                    Instantiate(p_solid, pos30m.transform.position, pos30m.transform.rotation);
+                  plat =  Instantiate(p_solid, pos30m.transform.position, pos30m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec30);
                     entry30.timer = sec30.ToString();
+					listP.Add(plat);
                 }
                 if (t30_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos30m.transform.position.x - 1.74f, pos30m.transform.position.y, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y, pos30m.transform.rotation.z);
-                    Instantiate(p_solid, pos30m.transform.position, pos30m.transform.rotation);
+                  plat =  Instantiate(p_solid, pos30m.transform.position, pos30m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t30_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos30m.transform.position.x - 1.74f, pos30m.transform.position.y + 1.8f, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y + 90.0f, pos30m.transform.rotation.z);
-                    Instantiate(p_solid, pos30m.transform.position, pos30m.transform.rotation);
+                  plat =  Instantiate(p_solid, pos30m.transform.position, pos30m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t30_plat.tag == "slim")
@@ -567,24 +609,27 @@ public class sceneMaker : MonoBehaviour
                     sec30 = int.Parse(if30.text);
                     auxv3 = new Vector3(pos30m.transform.position.x - 2.2f, pos30m.transform.position.y + 1f, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y + 90.0f, pos30m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos30m.transform.position.x - 2.0f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
+                  plat =  Instantiate(p_slab, new Vector3(pos30m.transform.position.x - 2.3f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec30);
                     entry30.timer = sec30.ToString();
+					listP.Add(plat);
                 }
                 if (t30_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos30m.transform.position.x - 2.2f, pos30m.transform.position.y + 1.8f, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y + 90.0f, pos30m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos30m.transform.position.x - 2.0f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
+                  plat =  Instantiate(p_slab, new Vector3(pos30m.transform.position.x - 2.3f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t30_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos30m.transform.position.x - 2.2f, pos30m.transform.position.y + 1.8f, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y + 90.0f, pos30m.transform.rotation.z);
-                    Instantiate(p_slab, new Vector3(pos30m.transform.position.x - 2.0f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
+                  plat =  Instantiate(p_slab, new Vector3(pos30m.transform.position.x - 2.3f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             if (t30_plat.tag == "glass")
@@ -594,25 +639,28 @@ public class sceneMaker : MonoBehaviour
                     sec30 = int.Parse(if30.text);
                     auxv3 = new Vector3(pos30m.transform.position.x - 2.2f, pos30m.transform.position.y + 1f, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y + 90.0f, pos30m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos30m.transform.position.x - 2.0f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
+                 plat =   Instantiate(p_transparent, new Vector3(pos30m.transform.position.x - 2.3f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
                     Instantiate(t_btn, auxv3, auxq);
                     auxt_btn = Instantiate(t_btn, auxv3, auxq);
                     auxt_btn.gameObject.GetComponentInChildren<pressed>().setTime(sec30);
                     entry30.timer = sec30.ToString();
+					listP.Add(plat);
                 }
                 if (t30_task.tag == "cube")
                 {
                     auxv3 = new Vector3(pos30m.transform.position.x - 2.2f, pos30m.transform.position.y + 1.8f, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y + 90.0f, pos30m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos30m.transform.position.x - 2.0f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
+                  plat =  Instantiate(p_transparent, new Vector3(pos30m.transform.position.x - 2.3f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
                     Instantiate(t_cube, auxv3, auxq);
+					listP.Add(plat);
                 }
                 if (t30_task.tag == "tower")
                 {
                     auxv3 = new Vector3(pos30m.transform.position.x - 2.2f, pos30m.transform.position.y + 1.8f, pos30m.transform.position.z);
                     auxq = Quaternion.Euler(pos30m.transform.rotation.x, pos30m.transform.localEulerAngles.y + 90.0f, pos30m.transform.rotation.z);
-                    Instantiate(p_transparent, new Vector3(pos30m.transform.position.x - 2.0f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
+                  plat =  Instantiate(p_transparent, new Vector3(pos30m.transform.position.x - 2.3f, pos30m.transform.position.y, pos30m.transform.position.z), pos30m.transform.rotation);
                     Instantiate(t_hanoi, auxv3, auxq);
+					listP.Add(plat);
                 }
             }
             itemDB.list.Add(entry30);
