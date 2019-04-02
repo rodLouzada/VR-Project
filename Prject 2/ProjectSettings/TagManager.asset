@@ -16,6 +16,9 @@ TagManager:
   - hard
   - low
   - high
+  - projectile
+  - FxTemporaire
+  - hand
   layers:
   - Default
   - TransparentFX

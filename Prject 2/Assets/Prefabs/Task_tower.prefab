@@ -2061,7 +2061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858552642}
   m_Layer: 0
-  m_Name: Task_tower_interactive
+  m_Name: Task_tower
   m_TagString: hanoi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

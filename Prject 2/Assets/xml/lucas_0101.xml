@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ItemDatabase xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>lucas</name>
+  <session>0101</session>
+  <time>62.2011032</time>
+  <list>
+    <Stages>
+      <level>Platform 2 meters:</level>
+      <task>Task style: tower</task>
+      <platform>Platform style: solid</platform>
+      <timer>No timer added</timer>
+    </Stages>
+    <Stages>
+      <level>Platform 5 meters:</level>
+      <task>Task style: cube</task>
+      <platform>Platform style: slim</platform>
+      <timer>No timer added</timer>
+    </Stages>
+    <Stages>
+      <level>Platform 10 meters:</level>
+      <task>Task style: btn</task>
+      <platform>Platform style: glass</platform>
+      <timer>12</timer>
+    </Stages>
+  </list>
+  <dificulty>Difficulty assessment: Medium</dificulty>
+  <immersiveness>Immersion assessment: Good</immersiveness>
+  <nausea>Nausea assessment: Medium</nausea>
+</ItemDatabase>

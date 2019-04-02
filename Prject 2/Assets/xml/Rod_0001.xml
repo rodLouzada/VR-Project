@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ItemDatabase xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>Rod</name>
+  <session>0001</session>
+  <time>41.1181679</time>
+  <list>
+    <Stages>
+      <level>Platform 2 meters:</level>
+      <task>Task style: tower</task>
+      <platform>Platform style: solid</platform>
+      <timer>No timer added</timer>
+    </Stages>
+    <Stages>
+      <level>Platform 5 meters:</level>
+      <task>Task style: cube</task>
+      <platform>Platform style: slim</platform>
+      <timer>No timer added</timer>
+    </Stages>
+    <Stages>
+      <level>Platform 20 meters:</level>
+      <task>Task style: btn</task>
+      <platform>Platform style: glass</platform>
+      <timer>20</timer>
+    </Stages>
+    <Stages>
+      <level>Platform 30 meters:</level>
+      <task>Task style: tower</task>
+      <platform>Platform style: slim</platform>
+      <timer>No timer added</timer>
+    </Stages>
+  </list>
+  <dificulty>Difficulty assessment: Medium</dificulty>
+  <immersiveness>Immersion assessment: Poor</immersiveness>
+  <nausea>Nausea assessment: High</nausea>
+</ItemDatabase>
